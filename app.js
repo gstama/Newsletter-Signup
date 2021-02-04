@@ -2,10 +2,6 @@ const express = require('express');
 const request = require('request');
 const bodyParser = require('body-parser');
 const https = require('https');
-<<<<<<< HEAD
-=======
-const config = require('./config');
->>>>>>> 7ed0ddf88f879ec4e40fba63a389a3a3d0a49c72
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,17 +30,10 @@ app.post('/', (req, res, next) => {
 
   const options = {
     method: 'POST',
-<<<<<<< HEAD
     auth: 'gstama:' + process.env.KEY,
   };
 
   const request = https.request(process.env.url, options, (response) => {
-=======
-    auth: 'gstama:' + config.key,
-  };
-
-  const request = https.request(config.url, options, (response) => {
->>>>>>> 7ed0ddf88f879ec4e40fba63a389a3a3d0a49c72
     if (response.statusCode === 200) {
       res.sendFile(__dirname + '/success.html');
     } else {
